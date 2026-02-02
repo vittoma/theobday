@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Para Théo — 17</title>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #0b1c2d, #1a2f4f, #0b1c2d);
+  color: #eaeaea;
+}
+
+section {
+  min-height: 100vh;
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3em;
+  color: #6fb8ff;
+}
+
+h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #ff6b6b;
+}
+
+p {
+  font-size: 1.15em;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+.btn {
+  margin-top: 40px;
+  padding: 15px 40px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #6fb8ff, #ff6b6b);
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1em;
+  align-self: center;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1.2s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background: rgba(0,0,0,0.45);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section class="center">
+  <h1>Théo, 17</h1>
+  <p class="fade">
+    todo protagonista chega num ponto da história  
+    em que o mundo não parece mais tutorial.
+  </p>
+  <a href="#quem" class="btn">começar</a>
+</section>
+
+<!-- QUEM ELE É -->
+<section id="quem">
+  <h2 class="fade">quem é você</h2>
+  <p class="fade">
+    você é a mistura improvável de coisas que não deveriam coexistir tão bem.
+    a leveza meio Gojo, o crescimento silencioso do Jin-Woo,
+    a intensidade emocional do Shinji.
+    <br><br>
+    alguém que consegue amar Undertale e Deltarune,
+    se perder em mundos como Minecraft, Roblox,
+    sobreviver ao medo de Phasmophobia,
+    e ainda carregar Resident Evil sem perder a estética fofinha.
+  </p>
+</section>
+
+<!-- GOSTOS -->
+<section>
+  <h2 class="fade">as coisas que você ama</h2>
+  <div class="card fade">
+    <p>
+      Solo Leveling, BLs manhwa, Given, Attack on Titan,
+      Uzumaki, Haikyuu, Jujutsu Kaisen, Evangelion, Banana Fish, entre          muitos outros.
+      <br><br>
+      histórias que falam de dor, laço, crescimento,
+      e de continuar mesmo quando tudo pesa.
+      <br><br>
+      talvez porque, no fundo, você entenda essas histórias
+      mais do que demonstra.
+    </p>
+  </div>
+</section>
+
+<!-- QUINTETO -->
+<section>
+  <h2 class="fade">o quinteto</h2>
+  <p class="fade">
+    você nunca caminhou sozinho.
+    <br><br>
+    eu, você, Nico, Ellay e Lolo.
+    cinco pessoas completamente diferentes,
+    mas estranhamente sincronizadas.
+    <br><br>
+    fico tão feliz que sejamos tão unidos, apesar de eu mal conhecer lolo     e ele mal aparecer, já gosto muito dele, eu amo isso, de sermos         apenas nós sabe, não precisamos fingir ser pessoas que não somos, eu      amo nossa autenticidade, e eu amo todos vocês
+  </p>
+</section>
+
+<!-- LINHA DO TEMPO -->
+<section>
+  <h2 class="fade">desde 2020</h2>
+  <p class="fade">
+    a gente se conheceu em 2020.
+    o mundo mudou,
+    a gente mudou,
+    mas a amizade ficou.
+    e continuará até o fim dos tempos.
+    porque é isso que somos, fechamento, conectados, os melhores juntos.
+    <br><br>
+    mesmo virtual,
+    nunca foi distante.
+    porque presença não se mede por espaço,
+    e sim por constância.
+  </p>
+</section>
+
+<!-- QUEBRA DE TOM -->
+<section class="center">
+  <p class="fade">
+    até aqui foi leve.
+    <br>
+    agora deixa eu abaixar o tom.
+  </p>
+</section>
+
+<!-- FINAL POÉTICO -->
+<section>
+  <h2 class="fade">pra você</h2>
+  <p class="fade">
+    talvez você nunca perceba completamente
+    o quanto é importante para mim, de todo coração.
+    <br><br>
+    mas você é, o melhor, e eu amo tudo que a gente viveu junto, e ainda     viverá.
+    <br><br>
+    você é casa,
+    mesmo à distância.
+    você é riso no meio do caos.
+    você é alguém que vale a pena manter,
+    ano após ano, imagina só a gente daqui 10 anos sla, olhando para     esses momentos, o quão incrível vai ser.
+    <br><br>
+    eu te amo.
+    é tudo que eu posso dizer, pq vc sempre está comigo, e pode contar     que sempre estarei com você, obrigado por tudo.
+    <br><br>
+    feliz 17 anos, Théo <3
+  </p>
+</section>
+
+<audio id="music" loop>
+  <source src="yunli.wav" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("music");
+music.volume = 0.4;
+
+document.addEventListener("click", () => {
+  if (music.paused) music.play();
+}, { once: true });
+
+const fades = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+fades.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
